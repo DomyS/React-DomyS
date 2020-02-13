@@ -1,0 +1,73 @@
+.mainWrapper {
+  position: relative;
+  position: absolute;
+  display: grid;
+}
+canvas {
+  height: 100vh;
+}
+.container {
+  display: grid;
+  position: absolute;
+}
+
+.text {
+  position: absolute;
+  color: #ff6347;
+}
+.text1 {
+  color: #ffc04a;
+  margin-top: 50px;
+}
+
+.logo {
+  /*margin-right: 800px;*/
+}
+.texts {
+  display: flex;
+  justify-content: column;
+}
+
+.paragraph {
+  font-size: 18px;
+  position: absolute;
+  color: white;
+  margin-top: 100px;
+  text-align: justify;
+}
+
+/* responsive */
+
+@media screen and (max-width: 500px) {
+  .container {
+    max-width: 350px;
+    width: 300px;
+  }
+  .logo {
+    margin-right: 0;
+  }
+  .text {
+    font-size: 6vw;
+  }
+  .text1 {
+    font-size: 5vw;
+  }
+  .paragraph {
+    font-size: 4vw;
+  }
+  .logo {
+    height: 18vh;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 960px;
+    width: 960px;
+  }
+}
+@media screen and (min-width: 2000px) {
+  .container {
+    max-width: 1100px;
+    width: 1100px;
+  }
+}

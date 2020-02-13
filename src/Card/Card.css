@@ -1,0 +1,95 @@
+.card {
+  height: 30vh;
+  color: white;
+  width: 50vw;
+  justify-content: space-evenly;
+  border-radius: 15px;
+  margin-top: 5%;
+  background: #fccb704b;
+  font-family: "Montserrat", sans-serif;
+}
+.cardText {
+  position: relative;
+  top: 13%;
+}
+.cardText h1 {
+  line-height: 60px;
+}
+.form {
+  position: relative;
+  top: 8%;
+  left: 2%;
+  height: 25vh;
+  width: 18vw;
+  border-radius: 15px;
+  float: left;
+}
+.cardButtons {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 20vw;
+  margin: 8% auto;
+}
+.cardButtons button {
+  cursor: pointer;
+  background: white;
+  height: 6vh;
+  width: 8vw;
+  border: 2px solid #ffc04a;
+  border-radius: 15px;
+  font-size: 1.1vw;
+}
+.cardButtons button:hover {
+  background: #2d3047;
+  color: white;
+  border: 2px solid #ff6347;
+}
+/* responsive */
+
+@media screen and (max-width: 500px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    height: 40vh;
+  }
+  .cardText {
+    position: relative;
+    line-height: 15px;
+  }
+  .card h1 {
+    position: relative;
+    font-size: 5vw;
+    top: -15%;
+  }
+  .card h3 {
+    display: none;
+  }
+  .form {
+    width: 60vw;
+    height: 20vh;
+    margin: 0 auto;
+    left: 0%;
+  }
+  .cardButtons {
+    margin-top: 10%;
+  }
+  .cardButtons button {
+    font-size: 3.5vw;
+    height: 5vh;
+    width: 12vh;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .card h1 {
+    font-size: 2vw;
+  }
+  .card h3 {
+    font-size: 1.5vw;
+  }
+  .form {
+    height: 25vh;
+    width: 18vw;
+  }
+}

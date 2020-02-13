@@ -1,38 +1,71 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+.header {
+  position: absolute;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 100%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin-top: -15%;
+  font-family: "Roboto", sans-serif;
+}
+.cardMain {
+  position: relative;
+  margin-top: 105%;
+}
+.social {
+  position: absolute;
+  margin-top: 105%;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/*responsive */
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
   }
-  to {
-    transform: rotate(360deg);
+  .header {
+    top: -25%;
+  }
+  .cardMain {
+    top: 111%;
+  }
+  .social {
+    top: 262%;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .cardMain {
+    top: 30%;
+  }
+  .social {
+    top: 105%;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .cardMain {
+    top: 2%;
+  }
+  .social {
+    top: 55%;
+  }
+  .header {
   }
 }
