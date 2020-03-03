@@ -10,7 +10,7 @@ export default class Social extends Component {
           <li>
             <div className="back"></div>
             <div className="icon">
-              <a href="www.linkedin.com/in/domante-stirbyte-07789b92">
+              <a href="https://www.linkedin.com/in/domante-stirbyte-07789b92">
                 <i className="fa fa-linkedin"></i>
               </a>
             </div>
