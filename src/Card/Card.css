@@ -39,6 +39,9 @@
   border-radius: 15px;
   font-size: 1.1vw;
 }
+.cardButtons button:focus {
+  outline: 0;
+}
 .cardButtons button:hover {
   background: #2d3047;
   color: white;
