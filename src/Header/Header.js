@@ -18,7 +18,8 @@ export default class Header extends Component {
                 Also, I did 6 months course/internship in a startup, where I
                 mainly focused on React. Constantly searching for interesting
                 projects and cool ideas to work with. Check out some of my
-                projects.
+                projects. This portfolio is created using React.{" "}
+                <i className="fa fa-heart"></i>
               </p>
             </div>
           </div>

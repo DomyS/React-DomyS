@@ -1,6 +1,6 @@
 .socialWrapper h1 {
   color: white;
-  font-size: 2.5vw;
+  font-size: 2.4vw;
 }
 .icon {
   position: absolute;
@@ -18,7 +18,7 @@
   max-width: 100%;
   min-height: 20vh;
   text-align: center;
-  margin: 40px auto;
+  margin: 80px auto;
   float: none;
 }
 
@@ -61,7 +61,7 @@
 /*responsive */
 @media screen and (max-width: 500px) {
   .socialWrapper h1 {
-    font-size: 6vw;
+    font-size: 22px;
   }
   .socialWrapper ul li {
     width: 60px;
@@ -69,5 +69,61 @@
   }
   .icon {
     font-size: 2.2em;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 500px) {
+  .socialWrapper h1 {
+    font-size: 22px;
+  }
+  .socialWrapper ul li {
+    width: 60px;
+    height: 60px;
+  }
+  .icon {
+    font-size: 2.2em;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 700px) {
+  .socialWrapper h1 {
+    font-size: 24px;
+  }
+  .socialWrapper ul li {
+    width: 70px;
+    height: 70px;
+  }
+  .icon {
+    font-size: 2.5em;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 900px) {
+  .socialWrapper h1 {
+    font-size: 28px;
+  }
+  .socialWrapper ul li {
+    width: 80px;
+    height: 80px;
+  }
+  .icon {
+    font-size: 3em;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .socialWrapper h1 {
+    font-size: 32px;
+  }
+  .socialWrapper ul li {
+    width: 80px;
+    height: 80px;
+  }
+  .icon {
+    font-size: 3em;
   }
 }

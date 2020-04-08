@@ -1,38 +1,31 @@
-.mainWrapper {
-  position: relative;
-  position: absolute;
-  display: grid;
-}
 canvas {
   height: 100vh;
 }
 .container {
-  display: grid;
-  position: absolute;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
 }
-
+.logo {
+  margin-top: 15px;
+}
+.fa {
+  color: rgba(247, 45, 45, 0.932);
+}
+.texts {
+  text-align: left;
+}
 .text {
-  position: absolute;
   color: #ff6347;
 }
 .text1 {
   color: #ffc04a;
-  margin-top: 50px;
-}
-
-.logo {
-  /*margin-right: 800px;*/
-}
-.texts {
-  display: flex;
-  justify-content: column;
 }
 
 .paragraph {
   font-size: 18px;
-  position: absolute;
+  position: relative;
   color: white;
-  margin-top: 100px;
   text-align: justify;
 }
 
@@ -40,24 +33,82 @@ canvas {
 
 @media screen and (max-width: 500px) {
   .container {
+    position: relative;
     max-width: 350px;
     width: 300px;
   }
   .logo {
-    margin-right: 0;
+    position: relative;
     margin-top: 25px;
   }
   .text {
-    font-size: 6vw;
+    font-size: 21px;
   }
   .text1 {
-    font-size: 5vw;
+    font-size: 18px;
   }
   .paragraph {
-    font-size: 4vw;
+    font-size: 15px;
   }
   .logo {
     height: 18vh;
+  }
+}
+@media screen and (min-width: 500px) {
+  .container {
+    position: relative;
+    max-width: 450px;
+    width: 450px;
+  }
+  .text {
+    font-size: 25px;
+  }
+  .text1 {
+    font-size: 20px;
+  }
+  .paragraph {
+    font-size: 16px;
+  }
+  .logo {
+    height: 18vh;
+  }
+}
+@media screen and (min-width: 700px) {
+  .container {
+    position: relative;
+    max-width: 660px;
+    width: 660px;
+  }
+  .text {
+    font-size: 27px;
+  }
+  .text1 {
+    font-size: 22px;
+  }
+  .paragraph {
+    font-size: 18px;
+  }
+  .logo {
+    height: 22vh;
+  }
+}
+@media screen and (min-width: 900px) {
+  .container {
+    position: relative;
+    max-width: 850px;
+    width: 850px;
+  }
+  .text {
+    font-size: 28px;
+  }
+  .text1 {
+    font-size: 23px;
+  }
+  .paragraph {
+    font-size: 18px;
+  }
+  .logo {
+    height: 25vh;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -65,10 +116,34 @@ canvas {
     max-width: 960px;
     width: 960px;
   }
+  .text {
+    font-size: 2vw;
+  }
+  .text1 {
+    font-size: 2vw;
+  }
+  .paragraph {
+    font-size: 1.5vw;
+  }
+  .logo {
+    height: 25vh;
+  }
 }
-@media screen and (min-width: 2000px) {
+@media screen and (min-width: 1400px) {
   .container {
-    max-width: 1100px;
-    width: 1100px;
+    max-width: 1000px;
+    width: 1000px;
+  }
+  .text {
+    font-size: 2vw;
+  }
+  .text1 {
+    font-size: 1.7vw;
+  }
+  .paragraph {
+    font-size: 1.2vw;
+  }
+  .logo {
+    height: 25vh;
   }
 }

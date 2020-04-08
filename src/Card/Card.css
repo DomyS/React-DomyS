@@ -1,34 +1,33 @@
 .card {
-  height: 30vh;
+  /*height: 30vh;*/
   color: white;
-  width: 50vw;
-  justify-content: space-evenly;
+  /*width: 50vw;*/
   border-radius: 15px;
-  margin-top: 5%;
+  /*margin-top: 5%;*/
   background: #fccb704b;
   font-family: "Montserrat", sans-serif;
 }
+.rightPart {
+  margin: 0 auto;
+}
 .cardText {
   position: relative;
-  top: 13%;
-}
-.cardText h1 {
-  line-height: 60px;
+  /*top: 12%;*/
 }
 .form {
   position: relative;
-  top: 8%;
-  left: 2%;
-  height: 25vh;
-  width: 18vw;
+  /*top: 8%;*/
+  /*left: 2%;*/
+  /*height: 25vh;
+  width: 18vw;*/
   border-radius: 15px;
-  float: left;
+  /*float: left;*/
 }
 .cardButtons {
   display: flex;
   justify-content: space-evenly;
   max-width: 20vw;
-  margin: 8% auto;
+  margin: 10% auto;
 }
 .cardButtons button {
   cursor: pointer;
@@ -37,7 +36,7 @@
   width: 8vw;
   border: 2px solid #ffc04a;
   border-radius: 15px;
-  font-size: 1.1vw;
+  font-size: 15px;
 }
 .cardButtons button:focus {
   outline: 0;
@@ -46,15 +45,20 @@
   background: #2d3047;
   color: white;
   border: 2px solid #ff6347;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  cursor: pointer;
 }
 /* responsive */
 
 @media screen and (max-width: 500px) {
   .card {
     display: flex;
+    margin: 50px auto;
     flex-direction: column;
-    width: 70vw;
-    height: 45vh;
+    width: 300px;
+    height: 330px;
   }
   .cardText {
     position: relative;
@@ -63,36 +67,162 @@
   .card h1 {
     position: relative;
     font-size: 5vw;
-    top: -22%;
+    margin-top: 10px;
   }
   .card h3 {
     display: none;
   }
   .form {
-    width: 50vw;
-    height: 22vh;
-    margin: 0 auto;
+    width: 250px;
+    height: 180px;
+    margin: 20px auto;
     left: 0%;
+  }
+  .cardButtons {
+    margin-top: 10%;
+    max-width: 20vw;
+  }
+  .cardButtons button {
+    font-size: 15px;
+    height: 5vh;
+    width: 14vh;
+    margin: 0px 5px;
+  }
+}
+@media screen and (min-width: 500px) {
+  .card {
+    display: flex;
+    margin: 40px auto;
+    flex-direction: column;
+    width: 300px;
+    height: 360px;
+  }
+  .cardText {
+    position: relative;
+    line-height: 15px;
+  }
+  .card h1 {
+    position: relative;
+    font-size: 23px;
+    margin-top: 10px;
+  }
+  .card h3 {
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+  .form {
+    width: 250px;
+    height: 180px;
+    margin: 20px auto;
+    left: 0%;
+  }
+  .cardButtons {
+    margin-top: 10%;
+    max-width: 20vw;
+  }
+  .cardButtons button {
+    font-size: 15;
+    height: 5vh;
+    width: 14vh;
+    margin: 0px 5px;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .card {
+    display: flex;
+    margin: 40px auto;
+    flex-direction: row;
+    width: 570px;
+    height: 270px;
+    align-items: center;
+  }
+  .cardText {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+  }
+  .cardText h1 {
+    position: relative;
+    font-size: 21px;
+    margin-top: 20px;
+  }
+  .cardText h3 {
+    font-size: 18px;
+    margin-top: 30px;
+    font-weight: 500;
+  }
+  .form {
+    width: 260px;
+    height: 210px;
+    margin: 0 auto;
   }
   .cardButtons {
     margin-top: 10%;
   }
   .cardButtons button {
-    font-size: 3.2vw;
+    font-size: 15px;
     height: 5vh;
-    width: 15vh;
+    width: 14vh;
   }
 }
-
-@media only screen and (min-width: 992px) {
-  .card h1 {
-    font-size: 2vw;
+@media only screen and (min-width: 900px) {
+  .card {
+    display: flex;
+    margin: 40px auto;
+    flex-direction: row;
+    width: 650px;
+    height: 250px;
+    align-items: center;
   }
-  .card h3 {
-    font-size: 1.5vw;
+  .cardText h1 {
+    font-size: 23px;
+  }
+  .cardText h3 {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .form {
+    width: 270px;
+    height: 210px;
+    margin: 0 auto;
+  }
+  .cardButtons {
+    margin-top: 10%;
+  }
+  .cardButtons button {
+    font-size: 17px;
+    height: 5vh;
+    width: 17vh;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .card {
+    display: flex;
+    margin: 40px auto;
+    flex-direction: row;
+    width: 700px;
+    align-items: center;
+  }
+  .cardText h1 {
+    font-size: 24px;
+  }
+  .cardText h3 {
+    font-size: 21px;
+    font-weight: 500;
   }
   .form {
-    height: 25vh;
-    width: 18vw;
+    width: 280px;
+    height: 210px;
+    margin: 0 auto;
+  }
+  .cardButtons {
+    margin-top: 10%;
+  }
+  .cardButtons button {
+    font-size: 17px;
+    height: 5vh;
+    width: 18vh;
   }
 }

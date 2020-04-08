@@ -1,45 +1,27 @@
 * {
-  margin: 0;
   padding: 0;
   font-family: "Montserrat", sans-serif;
 }
 .header {
-  position: absolute;
-  text-align: center;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: -15%;
-  font-family: "Roboto", sans-serif;
+  position: relative;
 }
 .cardMain {
   position: relative;
-  margin-top: 105%;
+  /*max-width: 48em;*/
+  text-align: center;
+  /*display: flex;*/
+  margin: 0 auto;
 }
 .social {
-  position: absolute;
-  margin-top: 105%;
+  position: relative;
 }
 
-/*responsive */
-@media screen and (max-width: 500px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
-  .header {
-    top: -25%;
-  }
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
   .cardMain {
-    top: 155%;
-  }
-  .social {
-    top: 330%;
   }
 }
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 }
@@ -50,22 +32,8 @@
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  .cardMain {
-    top: 30%;
-  }
-  .social {
-    top: 105%;
-  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-  .cardMain {
-    top: 2%;
-  }
-  .social {
-    top: 55%;
-  }
-  .header {
-  }
 }

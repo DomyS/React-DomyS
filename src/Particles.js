@@ -13,7 +13,7 @@ class Canvas extends Component {
   updateWindowDimensions = () => {
     this.setState({
       width: `${window.innerWidth}px`,
-      height: `${window.innerHeight}px`
+      height: `${window.innerHeight}px`,
     });
   };
   render() {
@@ -27,7 +27,7 @@ class Canvas extends Component {
           height: "100%",
           background: "#2D3047",
           backgroundSize: "cover",
-          backgroundPosition: "50% 50%"
+          backgroundPosition: "50% 50%",
         }}
       >
         <Particles
@@ -38,23 +38,23 @@ class Canvas extends Component {
                 value: 150,
                 density: {
                   enable: true,
-                  value_area: 1500
-                }
+                  value_area: 1500,
+                },
               },
               color: {
-                value: "#FFC04A"
+                value: "#FFC04A",
               },
               shape: {
                 type: "circle",
                 stroke: {
                   width: 0,
-                  color: "#FFC04A"
+                  color: "#FFC04A",
                 },
                 image: {
                   src: "img/github.svg",
                   width: 100,
-                  height: 100
-                }
+                  height: 100,
+                },
               },
               opacity: {
                 value: 0.04,
@@ -63,8 +63,8 @@ class Canvas extends Component {
                   enable: false,
                   speed: 1,
                   opacity_min: 0.1,
-                  sync: false
-                }
+                  sync: false,
+                },
               },
               size: {
                 value: 5.8,
@@ -73,8 +73,8 @@ class Canvas extends Component {
                   enable: false,
                   speed: 40,
                   size_min: 0.1,
-                  sync: false
-                }
+                  sync: false,
+                },
               },
               line_linked: {
                 enable_auto: true,
@@ -85,8 +85,8 @@ class Canvas extends Component {
                 condensed_mode: {
                   enable: false,
                   rotateX: 600,
-                  rotateY: 600
-                }
+                  rotateY: 600,
+                },
               },
               move: {
                 enable: true,
@@ -99,23 +99,23 @@ class Canvas extends Component {
                 attract: {
                   enable: false,
                   rotateX: 600,
-                  rotateY: 1200
-                }
-              }
+                  rotateY: 1200,
+                },
+              },
             },
             interactivity: {
               detect_on: "canvas",
               events: {
                 onhover: {
-                  enable: false
+                  enable: false,
                 },
                 onclick: {
-                  enable: false
+                  enable: false,
                 },
-                resize: true
-              }
+                resize: true,
+              },
             },
-            retina_detect: true
+            retina_detect: true,
           }}
         />
       </div>
