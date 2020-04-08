@@ -14,6 +14,7 @@ import Tabs from "./Tabs/Tabs";
 import Tab from "./Tabs/Tab";
 import FyloLanding from "./img/FyloLand.png";
 import ImageSearch from "./img/imageSearch.png";
+import Veure from "./img/Veure.png";
 
 const styles = {
   root: {
@@ -70,6 +71,13 @@ function App() {
             />
           </Tab>
           <Tab title="Javascript">
+            <Card
+              heading1="Veure E-shop"
+              heading3="Using Javascript, Scss, LocalStorage"
+              form={Veure}
+              live="https://veure-e-shop.now.sh/"
+              code="https://github.com/DomyS/Veure-e-shop"
+            />
             <Card
               heading1="Pricing Card with toggle"
               heading3="Using HTML, CSS, JavaScript"
