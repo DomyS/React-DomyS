@@ -43,7 +43,7 @@
 @media screen and (max-width: 500px) {
   .tab button {
     width: 95px;
-    font-size: 16px;
+    font-size: 15px;
   }
   .tab {
     width: 110px;

@@ -1,9 +1,6 @@
 .card {
-  /*height: 30vh;*/
   color: white;
-  /*width: 50vw;*/
   border-radius: 15px;
-  /*margin-top: 5%;*/
   background: #fccb704b;
   font-family: "Montserrat", sans-serif;
 }
@@ -12,16 +9,10 @@
 }
 .cardText {
   position: relative;
-  /*top: 12%;*/
 }
 .form {
   position: relative;
-  /*top: 8%;*/
-  /*left: 2%;*/
-  /*height: 25vh;
-  width: 18vw;*/
   border-radius: 15px;
-  /*float: left;*/
 }
 .cardButtons {
   display: flex;
@@ -66,7 +57,7 @@
   }
   .card h1 {
     position: relative;
-    font-size: 5vw;
+    font-size: 19px;
     margin-top: 10px;
   }
   .card h3 {
@@ -83,7 +74,7 @@
     max-width: 20vw;
   }
   .cardButtons button {
-    font-size: 15px;
+    font-size: 14px;
     height: 5vh;
     width: 14vh;
     margin: 0px 5px;
