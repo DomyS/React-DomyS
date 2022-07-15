@@ -1,20 +1,23 @@
 import React from 'react'
 import { createStyles, makeStyles } from '@material-ui/core/styles'
 import { Button } from '@material-ui/core'
+import { YELLOW_COLOR } from '../../utils/theme'
 
 const useStyles = makeStyles(() =>
   createStyles({
     yellowButton: {
-      background: '#FFC65C',
+      background: YELLOW_COLOR,
       fontFamily: 'Montserrat',
-      marginBottom: '30px',
       fontWeight: 700,
-      color: '#363A5B'
+      color: '#363A5B',
+      '&:hover': {
+        backgroundColor: YELLOW_COLOR
+      }
     }
   })
 )
 
-const AboutMe = props => {
+const MainButton = props => {
   const classes = useStyles()
 
   return (
@@ -22,4 +25,4 @@ const AboutMe = props => {
   )
 }
 
-export default AboutMe
+export default MainButton

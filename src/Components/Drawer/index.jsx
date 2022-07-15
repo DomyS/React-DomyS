@@ -1,17 +1,9 @@
 import React, { useState } from 'react'
 import { createStyles, makeStyles } from '@material-ui/core/styles'
-import {
-  Grid,
-  SwipeableDrawer,
-  // IconButton,
-  AppBar
-  // Toolbar
-} from '@material-ui/core'
+import { Grid, SwipeableDrawer, AppBar } from '@material-ui/core'
 import { styled } from '@material-ui/core/styles'
 import logo from '../../img/logo1.png'
-// import MenuIcon from '@material-ui/icons/Menu'
-// import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
-// import ChevronRightIcon from '@material-ui/icons/ChevronRight'
+import SocialButtons from './components/SocialButtons'
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -54,6 +46,7 @@ const Drawer = props => {
         </DrawerHeader>
         {/* mobile menu content  */}
         {props.menu}
+        <SocialButtons />
       </SwipeableDrawer>
     </div>
   )

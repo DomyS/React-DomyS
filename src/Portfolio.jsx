@@ -5,15 +5,8 @@ import Particles from './Particles'
 import Drawer from './Components/Drawer'
 import AboutMe from './Pages/AboutMe'
 import SkillsExperience from './Pages/SkillsExperience'
-import {
-  // BrowserRouter as Router,
-  // Switch,
-  Route,
-  Link,
-  Routes
-  // useRouteMatch,
-  // useParams
-} from 'react-router-dom'
+import Projects from './Pages/Projects'
+import { Route, Link, Routes } from 'react-router-dom'
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -61,9 +54,6 @@ function Portfolio () {
             <Link className={classes.menuLink} to='/projects'>
               Projects
             </Link>
-            <Link className={classes.menuLink} to='/contact'>
-              Contact
-            </Link>
           </Grid>
         }
       />
@@ -71,8 +61,7 @@ function Portfolio () {
         <Routes>
           <Route path='/' element={<AboutMe />} />
           <Route path='/skills-experience' element={<SkillsExperience />} />
-          <Route path='/projects' element={<AboutMe />} />
-          <Route path='/contact' element={<AboutMe />} />
+          <Route path='/projects' element={<Projects />} />
         </Routes>
       </Grid>
     </Grid>
