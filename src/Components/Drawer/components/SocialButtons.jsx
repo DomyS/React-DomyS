@@ -4,7 +4,7 @@ import { Grid, Link, Box } from '@material-ui/core'
 const SocialButtons = () => {
   return (
     <Box my={8}>
-      <Grid xs={12} container justifyContent='center'>
+      <Grid item xs={12} container justifyContent='center'>
         <Grid item xs={3}>
           <Link
             style={{ color: 'white', fontSize: '1.25rem' }}

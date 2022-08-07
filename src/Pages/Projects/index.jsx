@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { createStyles, makeStyles } from '@material-ui/core/styles'
-import { Grid, Typography, Fade } from '@material-ui/core'
+import { Grid, Typography } from '@material-ui/core'
 import Card from './components/Card'
 import CovidTracker from '../../img/covid.png'
 import FyloLanding from '../../img/FyloLand.png'
@@ -8,9 +8,15 @@ import Veure from '../../img/Veure.png'
 import { BRIGHT_ORANGE } from '../../utils/theme'
 import PageWrapper from '../../Components/PageWrapper/PageWrapper'
 
-const useStyles = makeStyles(() =>
+const useStyles = makeStyles(theme =>
   createStyles({
-    container: { position: 'relative', marginTop: '10%' },
+    container: {
+      position: 'relative',
+      marginTop: '10%',
+      [theme.breakpoints.down('sm')]: {
+        justifyContent: 'center'
+      }
+    },
     textWrapper: {
       width: 450,
       height: 'fit-content',
@@ -22,28 +28,16 @@ const useStyles = makeStyles(() =>
 const Projects = () => {
   const classes = useStyles()
 
-  const [progress, setProgress] = useState(0)
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setProgress(oldProgress => {
-        if (oldProgress === 100) {
-          return 100
-        }
-        const diff = Math.random() * 10
-        return Math.min(oldProgress + diff, 100)
-      })
-    }, 170)
-
-    return () => {
-      clearInterval(timer)
-    }
-  }, [])
-
   return (
     <PageWrapper>
-      <Grid container xs={12} justifyContent='space-between'>
-        <Grid xs={12}>
+      <Grid
+        container
+        item
+        xs={12}
+        justifyContent='space-between'
+        className={classes.container}
+      >
+        <Grid item xs={12}>
           <Typography
             variant='h5'
             style={{

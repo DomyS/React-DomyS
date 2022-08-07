@@ -1,6 +1,6 @@
 import React from 'react'
-import { createStyles, makeStyles } from '@material-ui/core/styles'
-import { Grid, Typography } from '@material-ui/core'
+import { createStyles, makeStyles, useTheme } from '@material-ui/core/styles'
+import { Grid, Typography, useMediaQuery } from '@material-ui/core'
 import ExperienceItem from './components/ExperienceItem'
 import { BRIGHT_ORANGE } from '../../utils/theme'
 import ReactIcon from '../../img/reactLogoWithName.png'
@@ -14,15 +14,29 @@ import Redux from '../../img/reduxWhite.png'
 import Storybook from '../../img/storybookWhite.png'
 import PageWrapper from '../../Components/PageWrapper/PageWrapper'
 
-const useStyles = makeStyles(() =>
+const useStyles = makeStyles(theme =>
   createStyles({
     container: { position: 'relative', marginTop: '10%' },
     experienceWrapper: {
       backgroundColor: 'rgba(62, 67, 102, 0.3)',
-      height: 'fit-content'
+      height: 'fit-content',
+      borderRadius: 5,
+      [theme.breakpoints.down('sm')]: {
+        margin: '30px 50px'
+      },
+      [theme.breakpoints.down('xs')]: {
+        margin: '10px 20px'
+      }
     },
     skillsWrapper: {
-      backgroundColor: 'rgba(62, 67, 102, 0.3)'
+      backgroundColor: 'rgba(62, 67, 102, 0.3)',
+      borderRadius: 5,
+      [theme.breakpoints.down('sm')]: {
+        margin: '10px 50px'
+      },
+      [theme.breakpoints.down('xs')]: {
+        margin: '10px 20px'
+      }
     },
     experienceText: {
       color: BRIGHT_ORANGE,
@@ -34,6 +48,12 @@ const useStyles = makeStyles(() =>
     },
     experienceItemWrapper: {
       margin: '20px 0px 40px 0px'
+    },
+    images: {
+      padding: '25px',
+      [theme.breakpoints.down('sm')]: {
+        padding: '15px'
+      }
     }
   })
 )
@@ -63,19 +83,82 @@ const experienceData = [
 ]
 
 const imagesData = [
-  { width: '90px', url: HtmlLogo, alt: 'html' },
-  { width: '65px', url: CssLogo, alt: 'css' },
-  { width: '80px', url: JavascriptIcon, alt: 'javascript' },
-  { width: '160px', url: ReactIcon, alt: 'react' },
-  { width: '160px', url: TypescriptIcon, alt: 'typescript' },
-  { width: '70px', height: '70px', url: WordpressIcon, alt: 'wordpress' },
-  { width: '150px', height: '60px', url: Redux, alt: 'redux' },
-  { width: '80px', height: '40px', url: GitIcon, alt: 'git' },
-  { width: '130px', url: Storybook, alt: 'storybook' }
+  {
+    width: '90px',
+    mobileWidth: '50px',
+    mobileHeight: '50px',
+    url: HtmlLogo,
+    alt: 'html'
+  },
+  {
+    width: '65px',
+    mobileWidth: '40px',
+    mobileHeight: '50px',
+    url: CssLogo,
+    alt: 'css'
+  },
+  {
+    width: '80px',
+    height: '80px',
+    mobileWidth: '50px',
+    mobileHeight: '50px',
+    url: JavascriptIcon,
+    alt: 'javascript'
+  },
+  {
+    width: '130px',
+    height: '50px',
+    mobileWidth: '80px',
+    mobileHeight: '30px',
+    url: ReactIcon,
+    alt: 'react'
+  },
+  {
+    width: '160px',
+    height: '60px',
+    mobileWidth: '100px',
+    mobileHeight: '40px',
+    url: TypescriptIcon,
+    alt: 'typescript'
+  },
+  {
+    width: '70px',
+    height: '70px',
+    mobileWidth: '50px',
+    mobileHeight: '50px',
+    url: WordpressIcon,
+    alt: 'wordpress'
+  },
+  {
+    width: '150px',
+    height: '60px',
+    mobileWidth: '100px',
+    mobileHeight: '40px',
+    url: Redux,
+    alt: 'redux'
+  },
+  {
+    width: '80px',
+    height: '40px',
+    mobileWidth: '50px',
+    mobileHeight: '30px',
+    url: GitIcon,
+    alt: 'git'
+  },
+  {
+    width: '170px',
+    height: '40px',
+    mobileWidth: '90px',
+    mobileHeight: '20px',
+    url: Storybook,
+    alt: 'storybook'
+  }
 ]
 
 const SkillsExperience = () => {
   const classes = useStyles()
+  const theme = useTheme()
+  const isMobileSize = useMediaQuery(theme.breakpoints.down('xs'))
 
   return (
     <PageWrapper>
@@ -84,7 +167,7 @@ const SkillsExperience = () => {
         justifyContent='space-evenly'
         className={classes.container}
       >
-        <Grid xs={6} className={classes.experienceWrapper}>
+        <Grid xs={12} md={6} className={classes.experienceWrapper}>
           <Typography variant='h5' className={classes.experienceText}>
             Experience
           </Typography>
@@ -99,7 +182,7 @@ const SkillsExperience = () => {
             ))}
           </Grid>
         </Grid>
-        <Grid xs={4} className={classes.skillsWrapper}>
+        <Grid xs={12} md={4} className={classes.skillsWrapper}>
           <Typography gutterBottom variant='h5' className={classes.skillsText}>
             Skills
           </Typography>
@@ -107,11 +190,11 @@ const SkillsExperience = () => {
             {imagesData.map((image, i) => (
               <img
                 key={i}
-                width={image.width}
-                height={image.height}
+                width={isMobileSize ? image.mobileWidth : image.width}
+                height={isMobileSize ? image.mobileHeight : image.height}
                 src={image.url}
                 alt={image.alt}
-                style={{ padding: '15px' }}
+                className={classes.images}
               />
             ))}
           </Grid>

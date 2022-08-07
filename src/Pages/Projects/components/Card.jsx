@@ -4,7 +4,7 @@ import { Paper, Typography, Box, Link } from '@material-ui/core'
 import { BRIGHT_ORANGE, YELLOW_COLOR } from '../../../utils/theme'
 import Button from '../../../Components/Button'
 
-const useStyles = makeStyles(() =>
+const useStyles = makeStyles(theme =>
   createStyles({
     dateText: {
       color: YELLOW_COLOR,
@@ -31,7 +31,12 @@ const useStyles = makeStyles(() =>
       // borderBottom: `1px solid ${BRIGHT_ORANGE}`
       backgroundColor: 'rgba(62, 67, 102, 1)',
       marginBottom: '20px',
-      height: 'fit-content'
+      height: 'fit-content',
+      borderRadius: 5,
+      [theme.breakpoints.down('md')]: {
+        marginLeft: '10px',
+        marginRight: '10px'
+      }
     }
   })
 )
@@ -41,12 +46,7 @@ const ProjectCard = props => {
   const classes = useStyles()
 
   return (
-    <Paper
-      className={classes.leftSide}
-      container
-      xs={12}
-      justifyContent='center'
-    >
+    <Paper className={classes.leftSide}>
       <Box p={3}>
         <Typography
           variant='h6'

@@ -3,7 +3,7 @@ import { createStyles, makeStyles } from '@material-ui/core/styles'
 import { Grid, Typography } from '@material-ui/core'
 import { BRIGHT_ORANGE, YELLOW_COLOR } from '../../../utils/theme'
 
-const useStyles = makeStyles(() =>
+const useStyles = makeStyles(theme =>
   createStyles({
     dateText: {
       color: YELLOW_COLOR,
@@ -16,15 +16,24 @@ const useStyles = makeStyles(() =>
     },
     companyName: {
       color: YELLOW_COLOR,
-      textAlign: 'left'
+      textAlign: 'left',
+      [theme.breakpoints.down('xs')]: {
+        fontSize: '1rem'
+      }
     },
     jobTitle: {
       color: YELLOW_COLOR,
-      textAlign: 'left'
+      textAlign: 'left',
+      [theme.breakpoints.down('xs')]: {
+        fontSize: '0.9rem'
+      }
     },
     aquiredSkills: {
       color: 'white',
-      textAlign: 'left'
+      textAlign: 'left',
+      [theme.breakpoints.down('xs')]: {
+        fontSize: '0.75rem'
+      }
     },
     leftSide: {
       borderBottom: `1px solid ${BRIGHT_ORANGE}`

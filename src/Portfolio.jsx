@@ -8,7 +8,7 @@ import SkillsExperience from './Pages/SkillsExperience'
 import Projects from './Pages/Projects'
 import { Route, Link, Routes } from 'react-router-dom'
 
-const useStyles = makeStyles(() =>
+const useStyles = makeStyles(theme =>
   createStyles({
     root: {
       fontFamily: 'Montserrat',
@@ -28,6 +28,12 @@ const useStyles = makeStyles(() =>
       '&:active, &:focus': {
         color: '#FFC65C'
       }
+    },
+    linkWrapper: {
+      marginTop: '40px',
+      [theme.breakpoints.down('sm')]: {
+        marginTop: '0px'
+      }
     }
   })
 )
@@ -43,7 +49,7 @@ function Portfolio () {
             container
             direction='column'
             justifyContent='center'
-            style={{ marginTop: '40px' }}
+            className={classes.linkWrapper}
           >
             <Link className={classes.menuLink} to='/'>
               About me
@@ -57,7 +63,7 @@ function Portfolio () {
           </Grid>
         }
       />
-      <Grid container justifyContent='center' style={{ paddingLeft: '180px' }}>
+      <Grid container justifyContent='center'>
         <Routes>
           <Route path='/' element={<AboutMe />} />
           <Route path='/skills-experience' element={<SkillsExperience />} />

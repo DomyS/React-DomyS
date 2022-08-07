@@ -1,7 +1,17 @@
 import React, { useState } from 'react'
 import { createStyles, makeStyles } from '@material-ui/core/styles'
-import { Grid, SwipeableDrawer, AppBar } from '@material-ui/core'
-import { styled } from '@material-ui/core/styles'
+import {
+  Grid,
+  SwipeableDrawer,
+  AppBar,
+  IconButton,
+  Toolbar,
+  useMediaQuery
+} from '@material-ui/core'
+import { useTheme, styled } from '@material-ui/core/styles'
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
+import ChevronRightIcon from '@material-ui/icons/ChevronRight'
+import MenuIcon from '@material-ui/icons/Menu'
 import logo from '../../img/logo1.png'
 import SocialButtons from './components/SocialButtons'
 
@@ -9,7 +19,8 @@ const useStyles = makeStyles(() =>
   createStyles({
     paper: {
       background: '#3E4366',
-      width: '180px'
+      width: '180px',
+      textAlign: 'center'
     }
   })
 )
@@ -26,6 +37,8 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 const Drawer = props => {
   const classes = useStyles()
   const [open, setOpen] = useState(false)
+  const theme = useTheme()
+  const isTabletSize = useMediaQuery(theme.breakpoints.down('md'))
 
   const drawer = (
     <div>
@@ -51,18 +64,67 @@ const Drawer = props => {
     </div>
   )
 
+  const tabletDrawer = (
+    <div>
+      <SwipeableDrawer
+        id='mobileDrawer'
+        variant='temporary'
+        open={open}
+        onOpen={() => setOpen(true)}
+        onClose={() => setOpen(false)}
+        classes={{ paper: classes.paper }}
+        ModalProps={{
+          keepMounted: false
+        }}
+        PaperProps={{ onClick: () => setOpen(false) }}
+        // ModalProps={{ onBackdropClick: this.toggleDrawer }}
+      >
+        <DrawerHeader>
+          <IconButton onClick={() => setOpen(!open)}>
+            {open === true ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+          </IconButton>
+        </DrawerHeader>
+        {/* mobile menu content  */}
+        <Grid container justifyContent='center'>
+          <img width='120px' className='logo' src={logo} alt='logo' />
+          {props.menu}
+        </Grid>
+        <SocialButtons />
+      </SwipeableDrawer>
+    </div>
+  )
+
   return (
-    <Grid
-      container
-      // xs={8}
-      justifyContent='center'
-      style={{ width: 180, background: '#3E4366' }}
-      // className={classes.container}
-    >
-      <AppBar position='fixed' color='default'>
-        {drawer}
-      </AppBar>
-    </Grid>
+    <>
+      {isTabletSize ? (
+        <>
+          <Toolbar>
+            <IconButton
+              color='inherit'
+              aria-label='open drawer'
+              edge='end'
+              onClick={() => setOpen(true)}
+              style={{ color: 'white', fontSize: '1.2rem', zIndex: '10' }}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Toolbar>
+          {tabletDrawer}
+        </>
+      ) : (
+        <Grid
+          container
+          // xs={8}
+          justifyContent='center'
+          style={{ width: 180, background: '#3E4366' }}
+          // className={classes.container}
+        >
+          <AppBar position='fixed' color='default'>
+            {drawer}
+          </AppBar>
+        </Grid>
+      )}
+    </>
   )
 }
 
