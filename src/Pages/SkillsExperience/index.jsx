@@ -115,7 +115,7 @@ const imagesData = [
   },
   {
     width: '160px',
-    height: '60px',
+    height: '50px',
     mobileWidth: '100px',
     mobileHeight: '40px',
     url: TypescriptIcon,

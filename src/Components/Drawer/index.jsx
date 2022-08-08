@@ -52,7 +52,6 @@ const Drawer = props => {
           keepMounted: true
         }}
         classes={{ paper: classes.paper }}
-        // style={{ width: 180, background: '#3E4366' }}
       >
         <DrawerHeader style={{ justifyContent: 'center' }}>
           <img width='120px' className='logo' src={logo} alt='logo' />
@@ -76,11 +75,10 @@ const Drawer = props => {
         ModalProps={{
           keepMounted: false
         }}
-        PaperProps={{ onClick: () => setOpen(false) }}
-        // ModalProps={{ onBackdropClick: this.toggleDrawer }}
+        PaperProps={{ onClick: () => setTimeout(() => setOpen(false), 1000) }}
       >
         <DrawerHeader>
-          <IconButton onClick={() => setOpen(!open)}>
+          <IconButton onClick={() => setOpen(!open)} style={{ color: 'white' }}>
             {open === true ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>
@@ -114,10 +112,8 @@ const Drawer = props => {
       ) : (
         <Grid
           container
-          // xs={8}
           justifyContent='center'
           style={{ width: 180, background: '#3E4366' }}
-          // className={classes.container}
         >
           <AppBar position='fixed' color='default'>
             {drawer}

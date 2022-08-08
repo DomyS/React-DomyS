@@ -6,7 +6,7 @@ import Drawer from './Components/Drawer'
 import AboutMe from './Pages/AboutMe'
 import SkillsExperience from './Pages/SkillsExperience'
 import Projects from './Pages/Projects'
-import { Route, Link, Routes } from 'react-router-dom'
+import { Route, NavLink, Routes } from 'react-router-dom'
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -25,9 +25,13 @@ const useStyles = makeStyles(theme =>
       color: 'white',
       textDecoration: 'none',
       marginTop: '40px',
-      '&:active, &:focus': {
-        color: '#FFC65C'
-      }
+      fontFamily: 'Montserrat'
+    },
+    activeLink: {
+      color: '#FFC65C',
+      marginTop: '40px',
+      textDecoration: 'none',
+      fontFamily: 'Montserrat'
     },
     linkWrapper: {
       marginTop: '40px',
@@ -51,15 +55,30 @@ function Portfolio () {
             justifyContent='center'
             className={classes.linkWrapper}
           >
-            <Link className={classes.menuLink} to='/'>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? classes.activeLink : classes.menuLink
+              }
+              to='/'
+            >
               About me
-            </Link>
-            <Link className={classes.menuLink} to='/skills-experience'>
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? classes.activeLink : classes.menuLink
+              }
+              to='/skills-experience'
+            >
               Skills &#38; Experience
-            </Link>
-            <Link className={classes.menuLink} to='/projects'>
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? classes.activeLink : classes.menuLink
+              }
+              to='/projects'
+            >
               Projects
-            </Link>
+            </NavLink>
           </Grid>
         }
       />
